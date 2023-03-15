@@ -14,7 +14,7 @@ RUN apt-get update && apt-get install -y \
 
 RUN npm cache clean --force
 RUN npm install
-RUN npm install @angular/cli
+RUN npm install @angular/cli && npm link @angular/cli
 RUN node_modules/@angular/cli/bin/ng build --configuration="production"
 RUN rm -rf node_modules
 RUN apt-get purge nodejs npm -y
